@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  price: 1.5
+  stock: 1
+  company_id: 1
+  description: MyText
+  image_url: MyString
+
+two:
+  price: 1.5
+  stock: 1
+  company_id: 1
+  description: MyText
+  image_url: MyString

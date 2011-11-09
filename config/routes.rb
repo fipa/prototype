@@ -1,4 +1,8 @@
 Prototipo::Application.routes.draw do
+  resources :offers
+
+  resources :companies
+
   resources :products
 
   # The priority is based upon order of creation:

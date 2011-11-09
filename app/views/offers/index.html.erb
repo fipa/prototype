@@ -1,0 +1,31 @@
+<h1>Listing offers</h1>
+
+<table>
+  <tr>
+    <th>Price</th>
+    <th>Product</th>
+    <th>Initial date</th>
+    <th>End date</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @offers.each do |offer| %>
+  <tr>
+    <td><%= offer.price %></td>
+    <td><%= link_to offer.product.description, offer.product %></td>
+    <td><%= offer.initial_date %></td>
+    <td><%= offer.end_date %></td>
+    <td><%= offer.description %></td>
+    <td><%= link_to 'Show', offer %></td>
+    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+    <td><%= link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Offer', new_offer_path %>

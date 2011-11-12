@@ -1,4 +1,16 @@
 Prototipo::Application.routes.draw do
+  resources :users
+
+  resources :purchases
+
+  get "pages/home"
+
+  get "pages/contact"
+
+  get "pages/how_it_works"
+
+  get "pages/who_we_are"
+
   resources :offers
 
   resources :companies

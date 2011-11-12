@@ -1,7 +1,101 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree . 
-*/
+body {
+    background-color: black;
+}
+
+#container {
+    content: " 0020";
+    display: block;
+    height: 0;
+    clear: both;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    position: relative;
+    width: 950px;
+    margin: 0 auto;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    height: 160px;
+    background-color: blue;
+}
+
+#right {
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    border: 1px solid dashed;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    width: 234px;
+    height: 600px;
+    float: right;
+}
+
+#footer {
+    color: #ccc;
+    background-color: black;
+    border-top: 5px solid #58C2DC;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    padding-top: 12px;
+    padding-left: 500px;
+    margin: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+#main {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    float: left;
+    display: block;
+    margin-top: 2px;
+    width: 705px;
+    margin-right: 0;
+    background-color: white;
+    margin: 4px;
+    margin-top: 15px;
+}
+
+div {
+    display: block;
+}
+
+/* products */
+
+.product {
+    background-color: #aaa;
+    width: 350px;
+    height: 200px;
+    float: none;
+    display: inline-table;
+}

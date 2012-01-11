@@ -8,4 +8,8 @@ module PurchasesHelper
     return number_to_currency(price, :locale => :cl, :precision => 0, :delimiter => ".")
   end
 
+  def percentage_format(percentage)
+    return number_to_percentage(percentage, :precision => 0)
+  end
+
 end

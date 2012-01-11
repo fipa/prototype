@@ -2,7 +2,11 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Offer.all
+    if params[:gift_id].nil?
+      @offers = Offer.all
+    else
+      @offers = Gift.find(params[:gift_id]).recommended_offers
+    end
 
     respond_to do |format|
       format.html # index.html.erb

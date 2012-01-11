@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def header
-    'test header'
+    image_tag('logo.jpg')
   end
 
   def footer
@@ -19,6 +19,10 @@ module ApplicationHelper
 
   def featured_offers
     render :partial => 'offers/featured', :locals => {:offers => Offer.get_featured_offers}
+  end
+
+  def navigation_menu
+    render :partial => 'pages/navigation_menu'
   end
 
 end

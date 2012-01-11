@@ -10,6 +10,12 @@
   <%= @user.password %>
 </p>
 
+  <div id="gifts">
+    <% @user.gifts.each do |@gift|%>
+        <%= render :partial => 'gifts/show_gift' %>
+    <% end %>
+  </div>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

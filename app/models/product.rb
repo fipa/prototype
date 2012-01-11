@@ -8,4 +8,8 @@ class Product < ActiveRecord::Base
     return self.stock > 0
   end
 
+  def active_offer
+    return self.offers.first
+  end
+
 end

@@ -1,5 +1,10 @@
 body {
-    background-color: black;
+    background-color: #abc;
+    margin-top: 0px;
+}
+
+a {
+    color: red;
 }
 
 #container {
@@ -21,21 +26,22 @@ body {
 
 #header {
     margin: 0;
-    padding: 0;
+    padding-left: 147px;
+    padding-top: 61px;
     border: 0;
     font-weight: inherit;
     font-style: inherit;
     font-size: 100%;
     font-family: inherit;
     vertical-align: baseline;
-    height: 160px;
-    background-color: blue;
+    background-image: url('regalo_escalado.png');
+    background-repeat: no-repeat;
 }
 
 #right {
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-color: white;
     border: 1px solid dashed;
     font-weight: inherit;
     font-style: inherit;
@@ -90,12 +96,58 @@ div {
     display: block;
 }
 
+.main_block {
+    background-color: #aaa;
+}
+
 /* offers */
 
 .offer {
-    background-color: #aaa;
-    width: 350px;
+    background-color: white;
+    width: 348px;
     height: 200px;
     float: none;
     display: inline-table;
+    margin: 1px;
+}
+
+.offer .description {
+    font-size: x-large;
+}
+
+.offer .price {
+
+}
+
+.offer .small {
+    font-size: small;
+}
+
+.offer .regular_price {
+    text-decoration: line-through;
+}
+
+/* navigation menu */
+#navigation_menu {
+    color: #ccc;
+    background-color: black;
+    border-top: 5px solid #58C2DC;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    padding-top: 12px;
+    padding-left: 500px;
+    margin: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+#navigation_menu a {
+    color: #ccc;
 }

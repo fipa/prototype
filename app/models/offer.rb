@@ -26,4 +26,8 @@ class Offer < ActiveRecord::Base
     return self.product.image_url
   end
 
+  def discount_percentage
+    return 100 * (self.price / self.product.price)
+  end
+
 end

@@ -1,0 +1,14 @@
+<%= hidden_field 'gift[]', 'id' %>
+Nombre: <%= text_field 'gift[]','name' %>
+Fecha: <%= date_select 'gift[]', 'date' %>
+Precio mínimo<%= number_field 'gift[]', 'min_price' %>
+Precio máximo<%= number_field 'gift[]', 'max_price' %>
+
+Marca tus categorías
+<% Category.find(:all, :order => :name).each do |category|  %>
+  <% id = @gift.id.to_s + '_' + category.id.to_s %>
+  <%  checked = ""
+      checked = "checked" unless @gift.categories.find_by_id(category.id).nil?
+  %>
+  <%= category.name %><%= check_box 'gift_categories', id, :checked => checked %>
+<% end  %>

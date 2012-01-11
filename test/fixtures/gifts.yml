@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  user_id: 1
+  date: 2011-12-26
+  min_price: 1
+  max_price: 1
+
+two:
+  name: MyString
+  user_id: 1
+  date: 2011-12-26
+  min_price: 1
+  max_price: 1

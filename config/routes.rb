@@ -1,4 +1,14 @@
 Prototipo::Application.routes.draw do
+  resources :gift_categories
+
+  resources :product_categories
+
+  resources :categories
+
+  resources :gifts
+
+  resources :form_of_payments
+
   resources :users
 
   resources :purchases

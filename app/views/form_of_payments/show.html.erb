@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @form_of_payment.name %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @form_of_payment.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_form_of_payment_path(@form_of_payment) %> |
+<%= link_to 'Back', form_of_payments_path %>

@@ -17,8 +17,8 @@ module ApplicationHelper
     'test sos_gift'
   end
 
-  def featured_products
-    render :partial => 'products/featured', :locals => {:products => Product.featured_products}
+  def featured_offers
+    render :partial => 'offers/featured', :locals => {:offers => Offer.get_featured_offers}
   end
 
 end

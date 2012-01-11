@@ -10,11 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111112055905) do
+ActiveRecord::Schema.define(:version => 20120108164203) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "form_of_payments", :force => true do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gift_categories", :force => true do |t|
+    t.integer  "gift_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gifts", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.date     "date"
+    t.integer  "min_price"
+    t.integer  "max_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,6 +55,13 @@ ActiveRecord::Schema.define(:version => 20111112055905) do
     t.datetime "initial_date"
     t.datetime "end_date"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_categories", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,7 +82,20 @@ ActiveRecord::Schema.define(:version => 20111112055905) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity",   :default => 1
+    t.integer  "fop_id"
+    t.integer  "gift_id"
   end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "email"

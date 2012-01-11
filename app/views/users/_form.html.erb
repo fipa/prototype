@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for @user do |user_form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,14 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= user_form.label :email %><br />
+    <%= user_form.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= user_form.label :password %><br />
+    <%= user_form.text_field :password %>
   </div>
+
+  Ingresa tus regalones
+  <div id="gifts">
+    <% @user.gifts.each do |@gift|%>
+        <%= render :partial => 'gifts/gift' %>
+    <% end %>
+</div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= user_form.submit %>
   </div>
 <% end %>

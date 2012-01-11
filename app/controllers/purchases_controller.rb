@@ -25,6 +25,11 @@ class PurchasesController < ApplicationController
   # GET /purchases/new.json
   def new
     @purchase = Purchase.new
+    @purchase.offer_id = params[:offer_id]
+    #TODO la cantidad se debe sacar de params
+    @purchase.quantity = 1
+    @redcompra = FormOfPayment.find(1)
+    @t_credito = FormOfPayment.find(2)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,10 +46,12 @@ class PurchasesController < ApplicationController
   # POST /purchases.json
   def create
     @purchase = Purchase.new(params[:purchase])
+    @purchase.status = Purchase.new_status
+    @purchase.user = current_user
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to @purchase, :notice => 'Purchase was successfully created.' }
+        format.html { redirect_to @purchase, :notice => 'Tu compra ha sido realizada exitosamente' }
         format.json { render :json => @purchase, :status => :created, :location => @purchase }
       else
         format.html { render :action => "new" }

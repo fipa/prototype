@@ -1,20 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Offer:</b>
-  <%= @purchase.offer_id %>
-</p>
+<p>Acabas de comprar <%= @purchase.offer_description %> por un precio especial de <%= standard_price_format(@purchase.price) %>.</p>
 
-<p>
-  <b>Status:</b>
-  <%= @purchase.status %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @purchase.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
-<%= link_to 'Back', purchases_path %>
+<p><%= image_tag(@purchase.image_url) %></p>

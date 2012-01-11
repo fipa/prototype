@@ -26,6 +26,8 @@ class UsersController < ApplicationController
   def new
     @user = User.new
 
+    3.times {@user.gifts.build}
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @user }
@@ -58,9 +60,26 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    @user.gifts.each do |gift|
+        gift.update_attributes(params['gift'][gift.id.to_s])
+    end
+
+    params[:gift_categories].each do |gc|
+      gift_id = gc.first.split('_').first
+      category_id = gc.first.split('_').last
+      is_active = gc.last
+
+      gift_category = GiftCategory.find(:first, :conditions => "category_id = " + category_id + " AND gift_id = " + gift_id)
+      if is_active == '1'
+        GiftCategory.create(:category_id => category_id, :gift_id => gift_id) if gift_category.nil?
+      else
+        gift_category.destroy unless gift_category.nil?
+      end
+    end
+
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, :notice => 'User was successfully updated.' }
+        format.html { redirect_to @user, :notice => 'User was successfully updated.'}
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

@@ -11,19 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :offer_id %><br />
-    <%= f.number_field :offer_id %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
+<%= f.hidden_field :offer_id %>
+<table>
+  <tr>
+    <td>
+      Descripci&oacute;n
+    </td>
+    <td>
+      Cantidad
+    </td>
+    <td>
+      Precio
+    </td>
+    <td>
+      Total
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= @purchase.offer_description %>
+    </td>
+    <td>
+      <%= f.number_field :quantity, {:size => 1000} %>
+    </td>
+    <td>
+      <%= standard_price_format(@purchase.price) %>
+    </td>
+    <td>
+      <%= standard_price_format(@purchase.price) %> <!-- TODO actualizar el total segun la cantidad de items -->
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.radio_button :fop_id, @redcompra.id %><%= @redcompra.name %>
+    </td>
+    <td colspan="3">
+      <%= image_tag(@redcompra.image_url) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.radio_button :fop_id, @t_credito.id %><%= @t_credito.name %>
+    </td>
+    <td colspan="3">
+      <%= image_tag(@t_credito.image_url) %>
+    </td>
+  </tr>
+
+</table>
+
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Comprar' %>
   </div>
 <% end %>

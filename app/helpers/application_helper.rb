@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def footer
-    'test footer'
+    render :partial => 'pages/footer'
   end
 
   def right_menu

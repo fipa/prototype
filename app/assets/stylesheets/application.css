@@ -26,16 +26,13 @@ a {
 
 #header {
     margin: 0;
-    padding-left: 147px;
-    padding-top: 61px;
     border: 0;
     font-weight: inherit;
     font-style: inherit;
     font-size: 100%;
     font-family: inherit;
     vertical-align: baseline;
-    background-image: url('regalo_escalado.png');
-    background-repeat: no-repeat;
+    background-color: #323232;
 }
 
 #right {
@@ -127,7 +124,7 @@ div {
     text-decoration: line-through;
 }
 
-/* navigation menu */
+/* menu */
 #navigation_menu {
     color: #ccc;
     background-color: black;
@@ -149,5 +146,29 @@ div {
 }
 
 #navigation_menu a {
+    color: #ccc;
+}
+
+#footer {
+    color: #ccc;
+    background-color: black;
+    border-top: 5px solid #58C2DC;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    padding-top: 12px;
+    padding-left: 500px;
+    margin: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+#footer a {
     color: #ccc;
 }

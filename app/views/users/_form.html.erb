@@ -12,18 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= user_form.label :email %><br />
+    <%= user_form.label :email %>
     <%= user_form.text_field :email %>
   </div>
-  <div class="field">
-    <%= user_form.label :password %><br />
-    <%= user_form.text_field :password %>
-  </div>
 
-  Ingresa tus regalones
+<h3>Ingresa tus regalones y marca tus preferencias de regalo</h3>
   <div id="gifts">
     <% @user.gifts.each do |@gift|%>
         <%= render :partial => 'gifts/gift' %>
+        <hr/>
     <% end %>
   </div>
 
